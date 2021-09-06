@@ -32,3 +32,13 @@
   top: 0;
   left: 0;
 }
+
+/* スマホで二重タップによる拡大縮小を防止 */
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+/*
+#https://kitak.hatenablog.jp/entry/2019/08/07/001123
+https://shanabrian.com/web/html-css-js-technics/other-ie10-ie11-edge-double-tap-zoom-disabled.php
+ */
