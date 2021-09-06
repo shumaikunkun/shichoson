@@ -11,7 +11,7 @@ maps.forEach( async ( map, index ) => {
 
     prefs.forEach( ( pref ) => {
       pref.addEventListener( 'mouseover', ( event ) => {
-        event.currentTarget.style.fill = "#555555"
+        event.currentTarget.style.fill = "#999999"
       } )
       pref.addEventListener( 'mouseleave', ( event ) => {
         event.currentTarget.style.fill = ""
