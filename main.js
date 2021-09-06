@@ -1,7 +1,13 @@
 const maps = [ "./prefecture.svg"]
 const containers = document.querySelectorAll( '.map' )
 
-const color_phase = ["rgb(200, 200, 200)", "rgb(150, 150, 150)", "rgb(100, 100, 100)", "rgb(50, 50, 50)"]
+const color_phase = ["rgb(0, 254, 255)", "rgb(0, 254, 0)", "rgb(254, 254, 6)", "rgb(255, 1, 0)", "rgb(255, 0, 255)"]
+// #00FEFF
+// #00FE00
+// #FEFE06
+// #FF0100
+// #FF00FF
+var score = 0
 
 maps.forEach( async ( map, index ) => {
   const res = await fetch( map )
@@ -14,6 +20,7 @@ maps.forEach( async ( map, index ) => {
 
     prefs.forEach( ( pref ) => {
       pref.addEventListener( 'click', ( event ) => {
+        score++
         const rgb = event.currentTarget.style.fill
         console.log("変更前: "+rgb);
         console.log(rgb==false);
@@ -27,10 +34,13 @@ maps.forEach( async ( map, index ) => {
           i = color_phase.indexOf(rgb)
           if (i >= color_phase.length-1) {
             event.currentTarget.style.fill = null
+            score-=color_phase.length+1
           }else{
             event.currentTarget.style.fill = color_phase[i+1]
           }
         }
+        document.getElementById('score').textContent = score ;
+        console.log(score);
       } )
     } )
   }
