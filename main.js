@@ -1,6 +1,8 @@
 const maps = [ "./prefecture.svg"]
 const containers = document.querySelectorAll( '.map' )
 
+const color_phase = ["rgb(200, 200, 200)", "rgb(150, 150, 150)", "rgb(100, 100, 100)", "rgb(50, 50, 50)", "rgb(0, 0, 0)"]
+
 maps.forEach( async ( map, index ) => {
   const res = await fetch( map )
 
@@ -10,11 +12,24 @@ maps.forEach( async ( map, index ) => {
     const prefs = document.querySelectorAll( '.geolonia-svg-map .prefecture' )
 
     prefs.forEach( ( pref ) => {
-      pref.addEventListener( 'mouseover', ( event ) => {
-        event.currentTarget.style.fill = "#999999"
-      } )
-      pref.addEventListener( 'mouseleave', ( event ) => {
-        event.currentTarget.style.fill = ""
+      pref.addEventListener( 'click', ( event ) => {
+        const rgb = event.currentTarget.style.fill
+        if (rgb == false) {
+          event.currentTarget.style.fill = color_phase[0]
+        }else if (color_phase.includes(rgb)) {
+          index = color_phase.indexOf(rgb)
+          if (index >= color_phase.length-1) {
+            event.currentTarget.style.fill = color_phase[0]
+          }else{
+            event.currentTarget.style.fill = color_phase[index+1]
+          }
+        }
+
+        console.log(pref);
+        console.log(event.currentTarget.style.fill);
+        console.log(event.currentTarget.style.fill==color_phase[0]);
+        console.log(event.currentTarget.style==false);
+
       } )
     } )
   }
