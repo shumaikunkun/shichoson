@@ -9,8 +9,6 @@ color_phase.forEach((color, i) => {
   document.getElementById(color_square[i]).style.color = color;
 });
 
-// document.getElementById("color_2_square").style.color = "#00FEFF";
-
 var score = 0
 
 maps.forEach( async ( map, index ) => {
@@ -43,7 +41,7 @@ maps.forEach( async ( map, index ) => {
             event.currentTarget.style.fill = color_phase[i+1]
           }
         }
-        document.getElementById('score').textContent = score ;
+        document.getElementById('score').textContent =  "経県値スコア "+score+"pt";
         console.log(score);
       } )
     } )
