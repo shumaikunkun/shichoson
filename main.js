@@ -2,11 +2,15 @@ const maps = [ "./prefecture.svg"]
 const containers = document.querySelectorAll( '.map' )
 
 const color_phase = ["rgb(0, 254, 255)", "rgb(0, 254, 0)", "rgb(254, 254, 6)", "rgb(255, 1, 0)", "rgb(255, 0, 255)"]
-// #00FEFF
-// #00FE00
-// #FEFE06
-// #FF0100
-// #FF00FF
+// #00FEFF, #00FE00, #FEFE06, #FF0100, #FF00FF
+const color_square = ["color_1_square", "color_2_square", "color_3_square", "color_4_square", "color_5_square"]
+
+color_phase.forEach((color, i) => {
+  document.getElementById(color_square[i]).style.color = color;
+});
+
+// document.getElementById("color_2_square").style.color = "#00FEFF";
+
 var score = 0
 
 maps.forEach( async ( map, index ) => {
