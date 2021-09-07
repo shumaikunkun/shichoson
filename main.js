@@ -28,6 +28,8 @@ maps.forEach( async ( map, index ) => {
         console.log(rgb==false);
         console.log(rgb==color_phase[0]);
         console.log(pref);
+        console.log(pref.childNodes[1].textContent);
+
 
         if (rgb == false) {
           event.currentTarget.style.fill = color_phase[0]
@@ -40,6 +42,7 @@ maps.forEach( async ( map, index ) => {
             event.currentTarget.style.fill = color_phase[i+1]
           }
         }
+        document.getElementById('prefecture').textContent =  pref.childNodes[1].textContent;
         document.getElementById('score').textContent =  "経県値スコア "+score+"pt";
       } )
     } )

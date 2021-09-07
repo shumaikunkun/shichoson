@@ -44,10 +44,10 @@ https://shanabrian.com/web/html-css-js-technics/other-ie10-ie11-edge-double-tap-
  */
 
 /* フォント変更 */
-h1, p, td { font-family: "M PLUS Rounded 1c"; }
+h1, h3, p, td { font-family: "M PLUS Rounded 1c"; }
 /* https://googlefonts.github.io/japanese/#roundedmplus1c */
 
-h1{
+h1, h3{
   text-align: center;
 }
 
