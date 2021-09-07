@@ -27,7 +27,6 @@ maps.forEach( async ( map, index ) => {
         console.log("変更前: "+rgb);
         console.log(rgb==false);
         console.log(rgb==color_phase[0]);
-
         console.log(pref);
 
         if (rgb == false) {
@@ -42,7 +41,6 @@ maps.forEach( async ( map, index ) => {
           }
         }
         document.getElementById('score').textContent =  "経県値スコア "+score+"pt";
-        console.log(score);
       } )
     } )
   }
